@@ -42,7 +42,7 @@ button{
 }
 
 button:hover{
-    background-color: hsl(0, 0%, 50%);
+    background-color: hsl(0, 13%, 68%);
 }
 button:active{
     background-color: hsl(0, 0%, 60%);
