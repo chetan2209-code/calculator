@@ -13,7 +13,8 @@ body{
     overflow: hidden;
 }
 #display{
-    width: 1000px;
+    width: 100%;
+    box-sizing: border-box;
     padding: 20px;
     font-size: 5rem;
     text-align: left;
