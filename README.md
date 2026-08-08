@@ -7,7 +7,6 @@
 - multiplication
 - division
 
-# Added 
-A backspace button is *added*
+# New button added
 
 ## LIVE LINK :-  https://chetan2209-code.github.io/calculator/
