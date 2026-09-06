@@ -7,6 +7,4 @@
 - multiplication
 - division
 
-# New button added
-
 ## LIVE LINK :-  https://chetan2209-code.github.io/calculator/
