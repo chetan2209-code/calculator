@@ -1,71 +1,144 @@
-body{
-    margin: 0%;
+body {
+    margin: 0;
     display: flex;
     justify-content: center;
-    height: 100vh;
+    align-items: center;
+    min-height: 100vh;
     background-color: rgb(86, 96, 130);
+    font-family: Arial, sans-serif;
 }
-#calculator{
-    font-family: Arial,sans-serif;
+
+#calculator-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     background-color: rgb(2, 0, 0);
-    border-radius: 15px;
-    max-width: 500px;
-    overflow: hidden;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    max-width: 700px;
+    width: 90%;
 }
-#display{
+
+#calculator {
+    flex: 1 1 320px;
+}
+
+#display {
     width: 100%;
     box-sizing: border-box;
     padding: 20px;
-    font-size: 5rem;
-    text-align: left;
+    font-size: 3.5rem;
+    text-align: right;
     border: none;
     background-color: rgb(62, 58, 58);
     color: white;
+    border-radius: 10px;
+    outline: none;
 }
 
-#keys{
+#keys {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    padding: 25px;
+    margin-top: 15px;
 }
 
-button{
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
+button {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
     border: none;
     background-color: hsl(0, 0%, 30%);
     color: white;
-    font-size: 3rem;
+    font-size: 1.8rem;
     font-weight: bold;
     cursor: pointer;
+    transition: background-color 0.15s ease;
 }
 
-button:hover{
-    background-color: hsl(0, 13%, 68%);
-}
-button:active{
-    background-color: hsl(0, 0%, 60%);
-}
-.operator-btn{
-    background-color:rgb(255, 179, 0) ;
-}
-.operator-btn:hover{
-    background-color:rgb(255, 206, 91);
-}
-.operator-btn:active{
-    background-color:rgb(255, 228, 97);
-}
-button[onClick = "backspace()"]{
+button:hover { background-color: hsl(0, 0%, 45%); }
+button:active { background-color: hsl(0, 0%, 60%); }
+
+.operator-btn { background-color: rgb(255, 179, 0); color: black; }
+.operator-btn:hover { background-color: rgb(255, 206, 91); }
+
+button[onclick*="backspace"],
+button[onclick*="clearDisplay"] {
     grid-column: span 2;
-    width: auto;
-    border-radius: 50px;
-
+    aspect-ratio: auto;
+    height: 100%;
+    border-radius: 30px;
 }
 
-button[onClick="clearDisplay()"]{
-    grid-column: span 2;
+/* History Panel Styling */
+#history-panel {
+    flex: 1 1 250px;
+    background-color: rgb(25, 25, 25);
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    max-height: 480px;
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #444;
+    padding-bottom: 8px;
+    color: white;
+}
+
+.history-header h3 { margin: 0; }
+
+#clear-history-btn {
     width: auto;
-    border-radius: 50px;
+    aspect-ratio: auto;
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background-color: #d9534f;
+}
+
+#clear-history-btn:hover { background-color: #c9302c; }
+
+#history-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+#history-list li {
+    padding: 10px;
+    border-bottom: 1px solid #333;
+    color: #ddd;
+    cursor: pointer;
+    text-align: right;
+    transition: background 0.2s ease;
+    border-radius: 6px;
+}
+
+#history-list li:hover {
+    background-color: #333;
+}
+
+.history-expression {
+    font-size: 0.85rem;
+    color: #aaa;
+}
+
+.history-result {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2ecc71;
+}
+
+.empty-msg {
+    text-align: center !important;
+    color: #666 !important;
+    cursor: default !important;
 }
