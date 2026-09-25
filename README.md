@@ -6,6 +6,7 @@
 - substraction
 - multiplication
 - division
+- History
 
 ## LIVE LINK :-  
 https://chetan2209-code.github.io/calculator/
